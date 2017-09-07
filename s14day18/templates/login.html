@@ -16,13 +16,14 @@
     <form action="/login/" method="post">
         <p>
             <label for="username">用户名：</label>
-            <input name="username" type="username">
+            <input id="username" name="username" type="username">
 
         </p>
         <p>
             <label for="pwd">密码：</label>
-            <input name="pwd" type="password">
+            <input name="pwd" id="pwd" type="password">
             <input type="submit" value="提交">
+            <span style="color: red">{{ error_msg }}</span>
         </p>
     </form>
 
