@@ -5,7 +5,34 @@
     <title>asset</title>
 </head>
 <body>
-    <h1>Asset</h1>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="1">id</td>
+                <td colspan="3">name</td>
+                <td colspan="3">ip</td>
+                <td colspan="1">port</td>
+                <td colspan="1">owner</td>
+                <td colspan="1">business</td>
+                <td colspan="2">area</td>
+                <td colspan="4">in_date</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in a_list %}
+                <tr>
+                    <td colspan="1">{{ row.id }}</td>
+                    <td colspan="3">{{ row.name }}</td>
+                    <td colspan="3">{{ row.ip }}</td>
+                    <td colspan="1">{{ row.port }}</td>
+                    <td colspan="1">{{ row.owner }}</td>
+                    <td colspan="1">{{ row.business }}</td>
+                    <td colspan="2">{{ row.area }}</td>
+                    <td colspan="4">{{ row.in_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 </body>
 </html>

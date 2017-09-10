@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from models import User
+from models import User, Asset
 # Create your views here.
 
 def login(request):
@@ -12,7 +12,10 @@ def login(request):
         u_res = User.objects.filter(name=u)
         p_res = User.objects.filter(passwd=p)
         if len(u_res) != 0 and len(p_res) != 0:
-            return render(request, 'asset.html')
+            a_list = Asset.objects.filter(owner=u)
+            a_list = Asset.objects.all()
+            print a_list
+            return render(request, 'asset.html', {'a_list': a_list})
         else:
             return render(request, 'login.html')
     else:
