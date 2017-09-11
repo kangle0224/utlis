@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>INDEX</h1>
+    <ul>
+        {% for key, value in user_dict.items %}
+            <a target="_blank" href="/detail-{{ key }}.html"><li>{{ value.username }}</li></a>
+        {% endfor %}
+    </ul>
 </body>
 </html>
