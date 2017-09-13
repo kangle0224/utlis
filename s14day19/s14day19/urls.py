@@ -20,7 +20,8 @@ from app01 import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login', views.login),
-    url(r'^index', views.index),
+    # url(r'^indexxx/(\d+)', views.index, name='index'),
+    url(r'^indexxx/(?P<nid>\d+)', views.index, name='index'),
     url(r'^detail-(\d+).html', views.detail),
     url(r'^home', views.Home.as_view()),
 ]

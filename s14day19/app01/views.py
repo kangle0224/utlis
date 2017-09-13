@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
+from django.urls import reverse
 
 # Create your views here.
 
@@ -70,7 +71,11 @@ user_dict = {
 
 
 
-def index(request):
+def index(request, **kwargs):
+    print request.path_info, kwargs
+    v = reverse('index', kwargs={"nid": 6})
+    print v
+
     return render(request, "index.html", {'user_dict': user_dict})
 
 
@@ -78,3 +83,4 @@ def detail(request, nid):
     detail_info = user_dict[nid]
     print detail_info
     return render(request, 'detail.html', {'detail_info': detail_info})
+
