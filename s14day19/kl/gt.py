@@ -28,4 +28,13 @@ a2 = readfile(f2)
 # for i in f3:
 #     print i
 
+import os
+import base64
 
+f_path = r'd:\python340.chm'
+
+with open(f_path) as f:
+    data = base64.b64decode(f.read())
+
+for i in data:
+    print i
