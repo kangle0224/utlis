@@ -1,0 +1,58 @@
+创建工程
+django-admin startproject project_name
+创建app
+python manage.py startapp app_name
+运行
+python manage.py runserver ip:port
+修改表结构
+python manage.py makemigrations
+生成表：
+python manage.py migrate
+创建admin用户
+python manage.py createsuperuser
+
+
+
+
+1、配置模板的路径
+2、配置静态文件的路径
+	STATICFILES_DIRS = (
+	    os.path.join(BASE_DIR, 'static'),
+	)
+3、添加app
+4、创建超级用户
+5、生成表
+6、views都写到app中
+
+
+问题：
+inline-block
+form name
+
+xx管理：
+	mysql
+	主机管理（8列）：
+		ip
+		端口
+		业务线
+		...
+	用户表：
+		用户名
+		密码
+	功能：
+		登录
+		主机管理页面
+			查看主机信息
+			增加主机信息   模态对话框
+			查看详细
+			删除   模态对话框
+			
+
+		退出
+        
+enctype="multipart/form-data"
+
+
+CBV:
+    from django.views import View
+    as_view
